@@ -15,13 +15,12 @@ class StudentTableSeeder extends Seeder
         //
         $faker = \Faker\Factory::create();
 
-        for($i = 0; $i < 10; $i++){
-        	Student::create([
-        		'name'     =>$faker->name,
-        		'address' =>$faker->address,
-        		'class_id' => 1
- 
-        		]);
+        for($i = 0; $i < 10; $i++) {
+            Student::create([
+            'name'      => $faker->name,
+            'address'   => $faker->address,
+            'class_id'  => 1
+            ]);    
         }
     }
 }

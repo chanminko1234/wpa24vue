@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class ReClass extends Model
 {
     //
-    protected $table="classes";
+    protected $table = "classes";
 }

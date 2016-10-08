@@ -16,8 +16,8 @@ class BlogController extends Controller
      */
     public function index()
     {
-        // return View:make('blog.index');
-        // Model in laravel
+        // return View::make("blog.index");
+        // Model in Laravel
         // Migration (Migration and Migrate) -> Seeding -> Model
         $blogs = Blog::paginate(10);
         return view("blog.index", compact("blogs"));
@@ -31,7 +31,7 @@ class BlogController extends Controller
     public function create()
     {
         //
-        return "Create";
+        return view("blog.create");
     }
 
     /**

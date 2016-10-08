@@ -25,6 +25,7 @@
 							<td>@{{ student.name }}</td>
 							<td>@{{ student.address }}</td>
 						</tr>
+				
 					</tbody>
 				</table>
 			</div>
@@ -35,6 +36,7 @@
 			el : ".container",
 			data: {
 				students : {!! $students !!}
+
 			}
 		});
 	</script>

@@ -12,7 +12,7 @@
 	<div id="app" class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h1>{{ $title }} <span v-show="!students.length"><img src="{{ asset('loading.gif') }}" style="width:35px;height:35px;" alt="loading..."><span></h1> <!-- echo $title; -->
+				<h1>{{ $title }} <span v-show="!students.length"><img src="{{ asset('img/loading.gif') }}" style="width:35px;height:35px;" alt="loading..."><span></h1> <!-- echo $title; -->
 				
 
 				<table class="table table-stripped" v-show="students.length">
@@ -53,7 +53,7 @@
 			},
 			methods: {
 				getStudents: function() {
-					this.$http.post(apiLink).then(function(response){
+					this.$http.get(apiLink).then(function(response){
 						this.$set("students", response.data);
 					}, function(error){
 						// handle error

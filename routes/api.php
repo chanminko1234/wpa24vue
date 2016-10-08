@@ -3,6 +3,16 @@
 use Illuminate\Http\Request;
 use App\Student;
 
+Route::get('/user', function (Request $request) {
+    return $request->user();
+})->middleware('auth:api');
+
+Route::get('get-students', function(Request $request) {
+	$students = Student::get();
+	sleep(5);
+	return $students;
+});
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,13 +24,21 @@ use App\Student;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
 
 
-Route::post('get-students', function(Request $request){
-	$students = Student::get();
-	sleep(2);			
-	return $students;
-});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

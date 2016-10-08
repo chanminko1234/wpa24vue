@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
-	<script src="{{ asset('js/app.js') }}"></script>
-	<title>Blog Listing</title>
-</head>
-<body>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<table class="table table-stripped">
+@extends("layout.master")
+@section("content")
+				<br>
+				<br>
+				<a href="{{ route('blogs.create') }}" class="btn btn-primary">Add New Blog</a>
+				<br>
+				<br>
+				<table class="table table-striped">
 					<thead>
 						<tr>
 							<th>ID</th>
@@ -28,9 +23,4 @@
 						@endforeach
 					</tbody>
 				</table>
-			</div>
-		</div>
-	</div>
-</body>
-</html>
-
+@endsection		

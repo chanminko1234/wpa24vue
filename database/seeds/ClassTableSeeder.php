@@ -14,9 +14,10 @@ class ClassTableSeeder extends Seeder
     {
         //
         ReClass::create([
-        	'name'         =>'WPA',
-        	'start_date' =>'2016-08-01',
-        	'end_date'   =>'2016-12-01'
+        	'name'			=> 'WPA',
+        	'start_date'	=> '2016-08-01',
+        	'end_date'		=> '2016-12-01'
         	]);
+
     }
 }
