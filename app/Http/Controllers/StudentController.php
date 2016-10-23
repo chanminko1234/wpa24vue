@@ -5,10 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
-use App\Blog;
-use Mmlinks\App\MyClass;
 
-class BlogController extends Controller
+class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +15,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        // return View::make("blog.index");
-        // Model in Laravel
-        // Migration (Migration and Migrate) -> Seeding -> Model
-        $blogs = Blog::paginate(5);
-        return view("blog.index", compact("blogs"));
+        //
     }
 
     /**
@@ -32,7 +26,6 @@ class BlogController extends Controller
     public function create()
     {
         //
-        return view("blog.create");
     }
 
     /**
@@ -41,17 +34,9 @@ class BlogController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Blog $blog)
+    public function store(Request $request)
     {
-        // IoC container
-        // $data = $request->except('_token');
-        // dd($data);
-
-        $this->validate ($request, $blog->rules);
-        // Blog::create($request->alll())
-        $blog->create($request->all());
-        return redirect()->route('blogs.index');
-        // return "store!";
+        //
     }
 
     /**

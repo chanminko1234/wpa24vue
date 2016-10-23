@@ -7,9 +7,9 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:api');
 
-Route::get('get-students', function(Request $request) {
+Route::post('get-students', function(Request $request){
 	$students = Student::get();
-	sleep(5);
+	sleep(3);
 	return $students;
 });
 

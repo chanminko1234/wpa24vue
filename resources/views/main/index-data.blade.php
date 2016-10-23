@@ -5,16 +5,13 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 	<script src="{{ asset('js/app.js') }}"></script>
-	<script src="{{ asset('bower_components/vuetable/dist/vue-table.min.js') }}"></script>
 	<title>{{ $site_title }}</title>
 </head>
 <body>
 	<div id="app" class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h1>{{ $title }} <span v-show="!students.length"><img src="{{ asset('img/loading.gif') }}" style="width:35px;height:35px;" alt="loading..."><span></h1> <!-- echo $title; -->
-				
-
+				<h1>{{ $title }} <span v-show="!students.length"><img src="{{ asset('loading.gif') }}" style="width:35px;height:35px;" alt="loading..."><span></h1> <!-- echo $title; -->
 				<table class="table table-stripped" v-show="students.length">
 					<thead>
 						<tr>
@@ -29,35 +26,29 @@
 							<td>@{{ student.name }}</td>
 							<td>@{{ student.address }}</td>
 						</tr>
-				
 					</tbody>
 				</table>
 			</div>
 		</div>
 		<pre>@{{ $data | json }}</pre>
 	</div>
-
 	<script>
 
-		var apiLink = "{{ url('api/get-students') }}";	
+		var apiLink = "{{ url('api/get-students') }}";
 		window.Laravel = "{{ csrf_token() }}";
-		
+
 		new Vue({
-			el : '#app',
+			el : "#app",
 			data: {
-				apiUrl : apiLink,
 				students : []
 			},
-			ready: function() { 
+			ready:function() {
 				this.getStudents();
 			},
 			methods: {
-				getStudents: function() {
-					this.$http.get(apiLink).then(function(response){
+				getStudents:function() {
+					this.$http.post(apiLink).then(function(response){
 						this.$set("students", response.data);
-					}, function(error){
-						// handle error
-						
 					});
 				}
 			}
@@ -65,3 +56,6 @@
 	</script>
 </body>
 </html>
+
+
+

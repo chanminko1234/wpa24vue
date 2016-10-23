@@ -8,7 +8,6 @@
 	<script src="{{ asset('js/app.js') }}"></script>
 	<script src="{{ asset('js/summernote.min.js') }}"></script>
 	<script src="{{ asset('js/custom.js') }}"></script>
-	<script src="{{ asset('font/summernote.ttf') }}"></script>
 </head>
 <body>
 	<div class="container">
